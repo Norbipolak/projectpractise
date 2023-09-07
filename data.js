@@ -1,5 +1,3 @@
-# projectpractise
-
 // Add all members
 const ourTeam = {
 	name: "heroes",
@@ -278,3 +276,54 @@ const ourTeam = {
 };
 
 
+for (const member of ourTeam.members){
+    if(member.codingLevel.level < 50)
+    member.codingLevel.seniority = "beginner"
+    else if(member.codingLevel.level >= 50 && member.codingLevel.level < 75)
+    member.codingLevel.seniority = "medium"
+    else
+    member.codingLevel.seniority = "senior"
+}
+
+console.log(ourTeam.members)
+
+let averageAge = 0
+
+for (const member of ourTeam.members){
+averageAge += 2023 - member.birthday.year 
+if(member.birthday.month === 9 && member.birthday.day > 8)
+averageAge--
+else if(member.birthday.month > 9)
+averageAge--
+}
+averageAge /= ourTeam.members.length
+
+console.log(averageAge)
+
+let averageCodingLevel = 0
+for (const member of ourTeam.members)
+averageCodingLevel += member.codingLevel.level
+averageCodingLevel /= ourTeam.members.length
+
+console.log(averageCodingLevel)
+
+let location = []
+
+for (const member of ourTeam.members){
+    if(!location[member.location.city])
+    location[member.location.city] = member.name
+}
+console.log(location)
+
+let commonGenres = 0 
+
+// missing genres
+
+for (const member of ourTeam.members){
+for (const genre of member.genres){
+if (!commongenres[genre])
+commonGenres[genre] = 1
+else
+commonGenres[genre] += 1
+}
+}
